@@ -11,7 +11,7 @@ graph TD
     
     InputChoice --> Switch{"choice"}
 
-    Switch -->|1| Case1["s = area_triangle(side)"]
+    Switch -->|1| Case1["s = S(side)"]
     Case1 --> PrintS["Печать площади s"]
     PrintS --> LoopCond
 
@@ -19,7 +19,7 @@ graph TD
     Case2 --> LoopCond
 
     Switch -->|3| Case3["Отрисовка фигуры (вложенные циклы)
-    Вызов: triangle_symbol(row, col, side, sym)"]
+    Вызов: tr(row, col, side, sym)"]
     Case3 --> LoopCond
     
     Switch -->|0| Case0["Печать: Выход из программы"]
@@ -32,12 +32,12 @@ graph TD
     LoopCond -->|Да| Menu
     LoopCond -->|Нет| End
 
-    subgraph "Функция area_triangle(a)"
+    subgraph "Функция S(a)"
         F1_Start([Начало]) --> F1_Calc["s = 0.5 * a * a"]
         F1_Calc --> F1_Ret["return s"]
     end
 
-    subgraph "Функция triangle_symbol(r, c, a, sym)"
+    subgraph "Функция tr(r, c, a, sym)"
         F2_Start([Начало]) --> F2_Cond1{"c < r"}
         F2_Cond1 -->|Да| F2_RetSpace[return ' ']
         
